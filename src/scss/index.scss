@@ -1,0 +1,47 @@
+@import "common.scss";
+@import "_mixin.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+    header {
+        width: 100%;
+        height: pxTorem(46px);
+        line-height: pxTorem(46px);
+        h2 {
+            text-align: center;
+            font-size: pxTorem(14px);
+        }
+    }
+    section {
+        .talk {
+            width: 100%;
+            background: #f8f8f8;
+            h3 {
+                width: 100%;
+                height: pxTorem(46px);
+                line-height: pxTorem(46px);
+                text-align: center;
+                font-size: pxTorem(14px);
+                font-weight: 600;
+                span {
+                    color: #888;
+                    padding: 0 pxTorem(6px);
+                }
+            }
+        }
+    }
+}
