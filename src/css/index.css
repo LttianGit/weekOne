@@ -207,3 +207,24 @@ body {
       .box section .talk h3 span {
         color: #888;
         padding: 0 0.16rem; }
+  .box section .content h3 {
+    width: 100%;
+    height: 1.22667rem;
+    line-height: 1.22667rem;
+    text-align: center;
+    font-size: 0.37333rem;
+    font-weight: 600; }
+    .box section .content h3 span {
+      color: #888;
+      padding: 0 0.16rem; }
+  .box section .content .container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    .box section .content .container .list {
+      width: 100%; }
+      .box section .content .container .list li {
+        display: flex;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        display: -webkit-flex;
+        /* NEW - Chrome */ }

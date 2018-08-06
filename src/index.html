@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
 </head>
 <script src="js/flexible.js"></script>
 
@@ -18,12 +19,51 @@
         <section>
             <div class="talk">
                 <h3><span>:::</span>讨论版<span>:::</span></h3>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <dl>
+                                <dt><img src="images/hot2_05.gif" alt=""></dt>
+                                <dd>发生的浪费</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h3><span>:::</span>讨论版<span>:::</span></h3>
+                <div class="container">
+                    <ul class="list">
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
+    <!-- <script src="js/swiper.min.js"></script> -->
+    <script src="js/better-scroll.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        // var mySwiper = new Swiper('.swiper-container');
+        var myScroll = new BScroll('.container');
+        $.ajax({
+            url: "/api/getDate",
+            success: function(data) {
+                var obj = JSON.parse(data);
+                var str = '';
+                for (var i in obj) {
+                    for (var j in obj[i]) {
+                        if (j === '有书头条') {
+                            obj[i][j].map(function(val) {
+                                str += '<li><div class="left"><h3>' + val.title + '</h3><p>' + val.content + '</p></div><div class="right"><img src="images/' + val.pic + '" alt=""></div></li>'
+                            })
+
+                        }
+                    }
+                }
+                $('.list').append(str);
+            }
+        })
+    </script>
 </body>
-<script src="js/swiper-4.1.6.min.js"></script>
-<script src="js/better-scroll.js"></script>
-<script src="js/jquery-3.3.1.min.js"></script>
 
 </html>

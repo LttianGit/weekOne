@@ -43,5 +43,30 @@ body {
                 }
             }
         }
+        .content {
+            h3 {
+                width: 100%;
+                height: pxTorem(46px);
+                line-height: pxTorem(46px);
+                text-align: center;
+                font-size: pxTorem(14px);
+                font-weight: 600;
+                span {
+                    color: #888;
+                    padding: 0 pxTorem(6px);
+                }
+            }
+            .container {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                .list {
+                    width: 100%;
+                    li {
+                        @include box_flex;
+                    }
+                }
+            }
+        }
     }
 }

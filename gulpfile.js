@@ -34,7 +34,7 @@ gulp.task('devServer', function() {
                     res.end(fs.readFileSync('./src/index.html'));
                 } else {
                     if (ext) {
-                        console.log(pathname)
+                        console.log(ext)
                         var pn = path.join(__dirname, 'src', pathname);
                         res.end(fs.readFileSync(pn));
                     } else {
